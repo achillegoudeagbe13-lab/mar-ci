@@ -1,0 +1,32 @@
+# Contrôle de version
+.git
+.gitignore
+
+# Dépendances (réinstallées par pnpm install dans Docker)
+node_modules
+**/node_modules
+
+# Builds locaux (reconstruits dans Docker)
+**/dist
+**/static-build
+**/.metro-cache
+**/node_modules/.cache
+
+# Fichiers Replit
+.replit
+.replit-artifact
+replit.nix
+.local/
+
+# Fichiers de développement
+**/.tsbuildinfo
+**/*.log
+**/*.map
+
+# Documentation
+*.md
+!README.md
+
+# Divers
+.DS_Store
+Thumbs.db
