@@ -1,0 +1,18 @@
+C'est compris, on va corriger ce "défilé" automatique qui bloque tout et forcer l'agent à rendre les boutons réellement opérationnels. Voici le message complet et technique à lui envoyer pour qu'il répare ces bugs et ajoute les nouvelles sécurités :
+### 🚨 URGENCE : CORRECTIFS DE LOGIQUE ET SÉCURITÉ COMPTE
+"Agent, l'application est actuellement bloquée par des erreurs de logique. Applique ces corrections immédiatement :
+ 1. **Correction du Splash/Login :** L'animation de bienvenue défile automatiquement et empêche d'appuyer sur le bouton 'Commencer'. **Désactive le défilement automatique** et rends le bouton 'Commencer' cliquable pour permettre l'accès manuel à la connexion.
+ 2. **Activation des Boutons Admin (PostgreSQL) :** Les boutons **VIP, Premium, Gratuit, Démo, Supprimer** et **Bloquer** ne fonctionnent pas. Tu dois écrire les fonctions UPDATE et DELETE en base de données pour que chaque clic modifie réellement le statut de l'utilisateur ou supprime l'annonce. Confirme-moi quand les routes API sont liées à ces boutons.
+ 3. **Système de Déconnexion :** Le bouton 'Se déconnecter' doit vider le cache/localStorage et rediriger vers l'écran de login. Actuellement, il est inactif.
+ 4. **Évolutions Inscription & Connexion :**
+   * **Inscription :** Rends le champ **'Numéro de téléphone' obligatoire**. On ne peut pas valider l'inscription si ce champ est vide.
+   * **Connexion :** Ajoute un lien **'Mot de passe oublié ?'**.
+   * **Récupération :** Si l'utilisateur clique sur 'Mot de passe oublié', il doit être redirigé vers une page demandant un **Code de Déblocage**.
+ 5. **Code de Secours Admin (Backdoor) :** * Crée une fonction dans l'Admin pour gérer les mots de passe oubliés.
+   * Le code secret universel pour débloquer un compte est : **Mar-ci 2026**. Si l'utilisateur entre ce code, il doit pouvoir réinitialiser son mot de passe.
+ 6. **Persistance :** Assure-toi que les sessions ne se perdent pas au rafraîchissement, sauf si on appuie sur 'Déconnecter'."
+### Pourquoi c'est important :
+ * **Le défilement automatique :** C'est ce qui rend l'appli inutilisable actuellement. En le désactivant, on reprend le contrôle.
+ * **Le code "Mar-ci 2026" :** C'est ton "Pass Partout". Si un commerçant au marché oublie son code, il t'appelle, tu lui donnes ce code (ou tu le fais pour lui), et il récupère son accès. Ça montre que ton service client est sérieux.
+ * **Numéro obligatoire :** C'est vital pour tes pubs WhatsApp. Pas de numéro = pas de business.
+Envoie ça à l'agent, et demande-lui bien de **confirmer** quand le bouton "Commencer" est débloqué. C'est la première étape pour tester le reste !

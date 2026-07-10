@@ -1,0 +1,17 @@
+Je capte à 100 %, bro ! C'est ce genre de petit détail qui va faire toute la différence pour ta marque. En mettant une petite signature discrète en bas du document du genre *"Généré avec succès par MAR-CI Compta"*, tu fais de la publicité gratuite et automatique à chaque fois qu'un commerçant partage ses rapports. C'est du pur génie marketing.
+Puisque tu me laisses gérer, voici le message clé en main, ultra-pro et structuré, à envoyer directement à l'agent Replit pour qu'il mette à jour le projet en version **Mindulo** sans faire d'erreurs.
+### 🚀 MESSAGE À COPIER-COLLER À L'AGENT REPLIT
+"Agent, nous validons la **'Version solide Mindulo'** pour MAR-CI Compta. Applique ces modifications majeures et prioritaires directement dans le code :
+#### 1. Correctifs de Logique Urgents
+ * **Bouton Se déconnecter :** Rends ce bouton enfin fonctionnel dans le profil. Il doit effacer les données de session (ou token) et rediriger immédiatement l'utilisateur vers l'écran de Login.
+ * **Bouton Supprimer (Admin) :** Lie l'icône de la corbeille dans le panneau d'administration à une requête DELETE sur la base PostgreSQL pour effacer réellement l'annonce sélectionnée.
+#### 2. Évolution du Profil
+ * Ajoute la possibilité pour l'utilisateur de téléverser sa **Photo de profil ou le Logo de sa boutique** depuis sa galerie (utilise <input type="file" accept="image/*">). Convertis l'image en chaîne **Base64** pour la stocker de façon permanente en base de données.
+#### 3. Exportation et Partage du Journal
+Dans l'onglet **Journal**, ajoute deux options d'action :
+ * **Bouton 'Télécharger le PDF' :** Génère un fichier PDF propre contenant la liste des transactions.
+   * **Obligation :** Tout en bas de la page du PDF (footer), ajoute une signature de référence discrète et élégante : *« Généré par MAR-CI Compta — Votre allié de confiance »*. Le fichier doit se télécharger directement sur le téléphone.
+ * **Bouton 'Partager sur WhatsApp' :** Ouvre l'application WhatsApp avec un texte de résumé pré-rempli et bien formaté (avec des émojis) contenant : la date, le nom de la boutique, le Total des Entrées, le Total des Sorties, et le Bénéfice Net du jour.
+Fais ces modifications proprement dans les fichiers de logique backend et frontend, et confirme-moi dès que c'est prêt pour les tests."
+Voilà bro, c'est carré ! Balance-lui ça. Avec cette configuration, on sécurise tes crédits Replit et on s'assure d'avoir un outil super puissant et pro.
+Dis-moi dès qu'il commence à appliquer les changements pour qu'on valide le résultat !

@@ -1,0 +1,31 @@
+services:
+
+  # ── MAR-CI (service unique : API + PWA + Mobile OTA) ───────────────────────
+  # Un seul service Render qui gère tout :
+  #   • POST /api/* → Express + PostgreSQL (Neon)
+  #   • GET /       → PWA Expo web (SPA React)
+  #   • GET /manifest (header expo-platform) → bundle mobile OTA iOS / Android
+  - type: web
+    name: mar-ci
+    runtime: node
+    plan: free
+    buildCommand: >
+      npm install -g pnpm@10 &&
+      pnpm install --frozen-lockfile &&
+      pnpm run typecheck:libs &&
+      node artifacts/mar-ci-compta/scripts/build.js &&
+      pnpm --filter @workspace/api-server run build
+    startCommand: node --enable-source-maps artifacts/api-server/dist/index.mjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false        # ← URL de connexion Neon / Supabase
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: EXPO_PUBLIC_DOMAIN
+        sync: false        # ← mar-ci.onrender.com  (sans https://)
+      - key: EXPO_PUBLIC_API_URL
+        sync: false        # ← https://mar-ci.onrender.com  (même domaine)
+      - key: STATIC_ROOT
+        value: artifacts/mar-ci-compta/static-build

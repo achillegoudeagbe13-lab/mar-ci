@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "MAR-CI Compta",
+    "slug": "mar-ci-compta",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "mar-ci-compta",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2563eb"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "icon": "./assets/images/logo.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#2563eb"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/logo.png",
+      "themeColor": "#2563eb",
+      "backgroundColor": "#2563eb",
+      "name": "MAR-CI Compta",
+      "shortName": "MAR-CI",
+      "description": "Application de comptabilité pour commerçants togolais"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://replit.com/"
+        }
+      ],
+      "expo-font",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

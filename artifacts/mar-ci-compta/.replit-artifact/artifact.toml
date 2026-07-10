@@ -1,0 +1,27 @@
+kind = "mobile"
+previewPath = "/"
+title = "MAR-CI Compta"
+version = "1.0.0"
+id = "artifacts/mar-ci-compta"
+router = "expo-domain"
+
+[[integratedSkills]]
+name = "expo"
+version = "1.0.0"
+
+[[services]]
+ensurePreviewReachable = "/status"
+name = "expo"
+paths = [ "/" ]
+localPort = 19021
+
+[services.development]
+run = "pnpm --filter @workspace/mar-ci-compta run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mar-ci-compta", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/mar-ci-compta", "run", "serve" ]
+
+[services.env]
+PORT = "19021"
+BASE_PATH = "/"

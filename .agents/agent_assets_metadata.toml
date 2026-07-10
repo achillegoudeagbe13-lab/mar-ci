@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "LW4Vgcvhs8rhcU6uvhtXr"
+uri = "file://artifacts/mar-ci-compta/assets/images/icon.png"
+type = "image"
+title = "mar-ci-compta-app-icon"
+
+[[generated]]
+id = "-otQ91bcAuVOFmpasnNoM"
+uri = "file://artifacts/mar-ci-compta/assets/images/logo.png"
+type = "image"
+title = "generated_image"
