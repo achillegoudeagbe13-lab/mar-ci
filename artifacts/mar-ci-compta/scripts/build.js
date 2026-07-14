@@ -546,22 +546,38 @@ async function buildWebExport() {
 }
 
 async function main() {
-  console.log("Building MAR-CI Compta (web + mobile)...");
+  // SKIP_MOBILE_BUILD=true → web PWA uniquement (Render, CI, Docker web-only)
+  // Par défaut (local / EAS) : compile aussi les bundles iOS + Android via Metro
+  const skipMobile = process.env.SKIP_MOBILE_BUILD === "true";
+
+  if (skipMobile) {
+    console.log("Building MAR-CI Compta (web PWA uniquement — mobile ignoré)...");
+  } else {
+    console.log("Building MAR-CI Compta (web + mobile)...");
+  }
 
   setupSignalHandlers();
 
   const domain = getDeploymentDomain();
-  const expoPublicReplId = getExpoPublicReplId();
   const baseUrl = `https://${domain}`;
   const timestamp = `${Date.now()}-${process.pid}`;
 
+  // Préparer les dossiers de sortie (nécessaire même en mode web-only)
   prepareDirectories(timestamp);
   clearMetroCache();
 
-  // Build web PWA first (no Metro needed)
+  // Build web PWA — toujours exécuté
   await buildWebExport();
 
-  // Then build iOS/Android bundles via Metro
+  if (skipMobile) {
+    console.log("Build web terminé. Bundles mobile ignorés (SKIP_MOBILE_BUILD=true).");
+    console.log("Déployé sur :", baseUrl);
+    process.exit(0);
+    return;
+  }
+
+  // ── Build iOS + Android via Metro (local / EAS seulement) ──────────────────
+  const expoPublicReplId = getExpoPublicReplId();
   await startMetro(domain, expoPublicReplId);
 
   const downloadTimeout = 600000;

@@ -29,3 +29,5 @@ services:
         sync: false        # ← https://mar-ci.onrender.com  (même domaine)
       - key: STATIC_ROOT
         value: artifacts/mar-ci-compta/static-build
+      - key: SKIP_MOBILE_BUILD
+        value: "true"

@@ -47,9 +47,9 @@ RUN pnpm install --frozen-lockfile
 # 1. Compiler les libs TypeScript partagées (drizzle schema, etc.)
 RUN pnpm run typecheck:libs
 
-# 2. Builder le PWA Expo + bundles mobile OTA
-#    → artifacts/mar-ci-compta/static-build/
-RUN node artifacts/mar-ci-compta/scripts/build.js
+# 2. Builder le PWA Expo (web uniquement — mobile ignoré sur Render/Docker)
+#    → artifacts/mar-ci-compta/static-build/web/
+RUN SKIP_MOBILE_BUILD=true node artifacts/mar-ci-compta/scripts/build.js
 
 # 3. Compiler l'API Express avec esbuild
 #    → artifacts/api-server/dist/index.mjs  (bundle autonome, sans node_modules)
